@@ -15,14 +15,14 @@
 
 - Javascript
 - React
-- React-dom
+- React-router-dom
+- React-icons
 - Styled-components
 - Axios
 - PokeApi
 
 ## 🔥 The Project
 I did this project as a means to improve my studies in React, it consists of a pokedex, with information from pokemon, Built using the **PokéAPI**.
-
 
 
 # Executing the Project
