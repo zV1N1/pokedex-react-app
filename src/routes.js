@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Pokemon from './pages/Pokemon';
+import Page404 from './pages/Page404';
 
 export default function MainRoutes() {
   return (
@@ -11,8 +13,11 @@ export default function MainRoutes() {
       <Route exact path="/">
         <Home />
       </Route>
+      <Route exact path="/pokemon/:id">
+        <Pokemon />
+      </Route>
       <Route exact path="*">
-        <h1>Not Found</h1>
+        <Page404 />
       </Route>
     </Switch>
   );

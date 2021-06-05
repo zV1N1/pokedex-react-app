@@ -32,7 +32,7 @@ export const Card = styled.div`
     #ffc9cc 93.75%,
     #ffcac6 100%
   );
-  margin: 30px;
+  margin: 30px 30px 30px 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,36 @@ export const Card = styled.div`
   animation: ${initPokemon} 2s ease-in-out both;
   &:hover {
     transform: translateY(-10px);
-    cursor: pointer;
     img {
+      transform: scale(1.2);
+    }
+  }
+  a {
+    text-align: center;
+    width: 180px;
+    height: 60px;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    transition: 300ms ease-in-out;
+
+    button {
+      width: 180px;
+      height: 45px;
+      background-color: #fff5;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        width: 50px;
+        height: 40px;
+        overflow: hidden;
+      }
+    }
+    &:hover {
       transform: scale(1.2);
     }
   }

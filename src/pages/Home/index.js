@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Header qty={pokemons.length} />
+      <Header qty={pokemons.length} setData={setfilterPokemons} />
       {filterPokemons.length ? (
         <Pokedex>
           {filterPokemons.map((data) => (
