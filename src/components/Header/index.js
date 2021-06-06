@@ -4,7 +4,7 @@ import { Container, Heading, Title, Filters, Type } from './styled';
 
 import SearchPokemon from '../SearchPokemon';
 
-export default function Header({ qty, setData }) {
+export default function Header({ qty, setFilter }) {
   const [active, setActive] = useState('');
   const query = new URLSearchParams(useLocation().search);
 
@@ -37,7 +37,7 @@ export default function Header({ qty, setData }) {
           </li>
           <li>
             <Type name="normal" exact to="?type=normal" active={active}>
-              normal
+              <p>normal</p>
             </Type>
           </li>
           <li>
@@ -46,7 +46,7 @@ export default function Header({ qty, setData }) {
             </Type>
           </li>
         </Filters>
-        <SearchPokemon setData={setData} />
+        <SearchPokemon setFilter={setFilter} />
       </Container>
     </Heading>
   );

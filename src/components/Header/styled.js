@@ -25,7 +25,6 @@ export const Filters = styled.ul`
   display: flex;
 
   li {
-    text-align: center;
     cursor: pointer;
     background: grey;
     border: none;
@@ -40,10 +39,14 @@ export const Filters = styled.ul`
       display: block;
       width: 100%;
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;
 
+console.log(`${colors.grass[0]}`);
 export const Type = styled(NavLink)`
   ${({ active, name }) =>
     active === name &&
@@ -54,5 +57,6 @@ export const Type = styled(NavLink)`
     border-radius: 6px;
     transition: transform 300ms ease-in-out;
     transform: scale(1.1);
+    box-shadow: 2px 2px 20px 2px ${colors[`${name}`][0]};
   `}
 `;

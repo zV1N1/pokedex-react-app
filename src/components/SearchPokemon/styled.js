@@ -21,14 +21,9 @@ export const Search = styled.form`
     border: none;
     background-color: transparent;
     transition: transform 200ms ease-in-out;
-
+    cursor: pointer;
     &:hover {
       transform: scale(1.2);
-    }
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
     }
   }
 `;

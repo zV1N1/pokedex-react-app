@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import { CgPokemon } from 'react-icons/cg';
 import { BiSearchAlt } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Container, Search } from './styled';
 import axios from '../../services/axios';
 
-export default function SearchPokemon({ setData }) {
+export default function SearchPokemon({ setFilter }) {
   const [search, setSearch] = useState('');
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    history.push({ pathname: '/', search: `?search=${search}` });
     try {
       const { data } = await axios.get(`/${search}`);
-
-      setData([data]);
+      const newData = [data];
+      setFilter(newData);
     } catch (erro) {
-      setData([]);
+      setFilter([]);
     }
   };
-
   return (
     <Container>
       <Search onSubmit={handleSubmit}>
@@ -29,9 +30,7 @@ export default function SearchPokemon({ setData }) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <button type="submit">
-          <Link to={`?search=${search}`}>
-            <BiSearchAlt color="white" size="90%" onClick={handleSubmit} />
-          </Link>
+          <BiSearchAlt color="white" size="90%" onClick={handleSubmit} />
         </button>
       </Search>
     </Container>
