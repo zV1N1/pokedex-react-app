@@ -14,6 +14,10 @@ const initNotFound = keyframes`
 
 export const Container = styled.div`
   text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: ${initNotFound} 2s ease-in-out;
 `;
 

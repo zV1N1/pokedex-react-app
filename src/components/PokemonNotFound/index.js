@@ -5,7 +5,7 @@ import { Container, Title } from './styled';
 export default function PokemonNotFound() {
   return (
     <Container>
-      <Title>Pokemons Not Found</Title>
+      <Title>Pokemon Not Found</Title>
       <GiMagnifyingGlass size="10%" color="grey" />
     </Container>
   );

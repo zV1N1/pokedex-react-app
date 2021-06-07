@@ -26,7 +26,7 @@ export default function SearchPokemon({ setFilter }) {
         <CgPokemon size="30px" />
         <input
           type="text"
-          placeholder="ex: pikachu"
+          placeholder="ex: pikachu or 25"
           onChange={(e) => setSearch(e.target.value)}
         />
         <button type="submit">

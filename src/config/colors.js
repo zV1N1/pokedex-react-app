@@ -3,5 +3,5 @@ export const colors = {
   fire: ['#fc6076', '#ff9a44 100%'],
   water: ['#4facfe', '#00f2fe 100%'],
   normal: ['#bdc2e8', '#bdc2e8 1%', '#e6dee9 100%'],
-  bug: ['#243949', '#517fa4 100%'],
+  bug: ['#96fbc4', '#f9f586 100%'],
 };

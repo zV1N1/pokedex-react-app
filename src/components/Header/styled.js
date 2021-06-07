@@ -46,7 +46,6 @@ export const Filters = styled.ul`
   }
 `;
 
-console.log(`${colors.grass[0]}`);
 export const Type = styled(NavLink)`
   ${({ active, name }) =>
     active === name &&
