@@ -7,12 +7,14 @@ import store, { persistor } from './store';
 import Routes from './routes';
 
 import GlobalStyle from './styles/GlobalStyles';
+import Header from './components/Header';
 
 function App() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Router>
+          <Header />
           <Routes />
           <GlobalStyle />
         </Router>

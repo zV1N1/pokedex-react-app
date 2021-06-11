@@ -6,4 +6,6 @@ export const Pokedex = styled.section`
   flex-wrap: wrap;
 `;
 
-export const Container = styled.section``;
+export const Container = styled.section`
+  margin: 20px 40px 40px 40px;
+`;

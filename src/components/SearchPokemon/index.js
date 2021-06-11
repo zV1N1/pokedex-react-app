@@ -13,7 +13,7 @@ export default function SearchPokemon({ setFilter }) {
     e.preventDefault();
     history.push({ pathname: '/', search: `?search=${search}` });
     try {
-      const { data } = await axios.get(`/${search}`);
+      const { data } = await axios.get(`pokemon/${search}`);
       const newData = [data];
       setFilter(newData);
     } catch (erro) {
