@@ -11,7 +11,6 @@ export default function Filters({ setFilter }) {
 
   useEffect(() => {
     setActive(query.get('type'));
-    // eslint-disable-next-line
   }, [query.get('type')]);
   return (
     <Container>

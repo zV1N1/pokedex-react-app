@@ -1,32 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../../../services/axios';
+import React from 'react';
 
 import { Container, Type, Abil, PokeDetails } from './styled';
 
-export default function Details({ id }) {
-  const [height, setHeight] = useState(0);
-  const [weight, setWeight] = useState(0);
-  const [abilities, setAbilities] = useState([]);
-  const [type, setType] = useState([]);
-
-  useEffect(() => {
-    async function getData() {
-      try {
-        const { data } = await axios.get(`pokemon/${id}`);
-
-        setHeight(data.height);
-        setWeight(data.weight);
-        setAbilities(data.abilities);
-        setType(data.types);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    getData();
-    // eslint-disable-next-line
-  }, []);
-
+export default function Details({ id, height, weight, abilities, type }) {
   return (
     <Container>
       <PokeDetails>

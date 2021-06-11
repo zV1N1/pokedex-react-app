@@ -2,11 +2,18 @@ import styled from 'styled-components';
 import { colors } from '../../../config/colors';
 
 export const Container = styled.div`
+  margin-top: 50px;
   text-align: center;
+  p {
+    color: #f8f9fa;
+    margin: 3px;
+    font-size: 18px;
+  }
 `;
 
 export const Title = styled.h2`
-  margin-top: 50px;
+  width: 300px;
+  margin: auto;
 
   ${({ name }) =>
     name &&
@@ -24,14 +31,46 @@ export const Title = styled.h2`
 export const Chain = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+`;
+
+export const Name = styled.h2`
+  font-size: 20px;
+  color: white;
+  ${({ name }) =>
+    colors[`${name}`]
+      ? `
+    padding: 3px 6px 3px 6px;
+    background: linear-gradient(to right, ${colors[`${name}`]});
+    border: none;
+    border-radius: 3px;
+  `
+      : `
+    background: linear-gradient(to right, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
+    box-shadow: 2px 2px 20px 7px #8989ba;
+  `}
 `;
 
 export const Pokemon = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Species = styled.div`
+  text-align: center;
   margin: 20px;
 
   img {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 120px;
+  }
+`;
+
+export const Level = styled.div`
+  svg {
+    width: 80px;
+    height: 40px;
   }
 `;

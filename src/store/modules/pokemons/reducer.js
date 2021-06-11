@@ -1,12 +1,12 @@
 const initialState = {
-  currentPokemon: {},
+  typePoke: '',
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case 'CURRENT_POKEMON': {
+    case 'TYPE_POKEMON': {
       const newState = { ...state };
-      newState.currentPokemon = action.payload.newData;
+      newState.typePoke = action.payload.typePoke;
       return newState;
     }
     default: {

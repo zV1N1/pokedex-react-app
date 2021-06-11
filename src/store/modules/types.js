@@ -1,1 +1,1 @@
-export const CURRENT_POKEMON = 'CURRENT_POKEMON';
+export const TYPE_POKEMON = 'TYPE_POKEMON';

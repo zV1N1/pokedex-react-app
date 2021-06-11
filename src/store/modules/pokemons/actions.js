@@ -1,8 +1,8 @@
 import * as types from '../types';
 
-export function currentPokemon(payload) {
+export function typePokemon(payload) {
   return {
-    type: types.CURRENT_POKEMON,
+    type: types.TYPE_POKEMON,
     payload,
   };
 }

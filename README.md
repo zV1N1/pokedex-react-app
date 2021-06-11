@@ -2,7 +2,20 @@
     Pokedex
 </h1>
 
+<div align="center">
+    <img src="./.github/src/pokedex.png" alt="pokedex">
+</div>
+
 ---
+
+# 📌 Screenshots
+<div align="center">
+  <img src="./.github/src/pokedex2.png" alt="pokedex" width="300">
+  <img src="./.github/src/pokedex3.png" alt="pokedex" width="300">
+  <img src="./.github/src/pokedex4.png" alt="pokedex" width="300">
+  <img src="./.github/src/pokedex5.png" alt="pokedex" width="300">
+  <img src="./.github/src/pokedex6.png" alt="pokedex" width="300">
+</div>
 
 <p align="center" target="_blank">
     Made with 💜 by Vinicius Jose
@@ -20,16 +33,22 @@
 - Styled-components
 - Axios
 - PokeApi
+- Redux
 
-## 🔥 The Project
+---
+
+## ❤️ The Project
 I did this project as a means to improve my studies in React, it consists of a pokedex, with information from pokemon, Built using the **PokéAPI**.
 
+# Description
+
+---
 
 # Executing the Project
 
 #### Cloning the project
 
-```javascript
+```bash
     $ git clone https://github.com/zV1N1/pokedex-react-app.git
 
     # Go into the repository

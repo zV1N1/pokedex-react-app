@@ -35,7 +35,6 @@ export default function Home() {
     }
 
     if (pokemons < 3) getData();
-    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -43,10 +42,9 @@ export default function Home() {
       setFilterPokemons(
         pokemons.filter((pk) => pk.types[0].type.name === query.get('type')),
       );
-    } else {
+    } else if (!query.get('search')) {
       setFilterPokemons(pokemons);
     }
-    // eslint-disable-next-line
   }, [pokemons, query.get('type'), query.get('search')]);
 
   return (

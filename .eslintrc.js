@@ -25,9 +25,9 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 0,
     'no-console': 0,
-    'react/prop-types': 0,
     'func-names': 0,
     'no-prototype-builtins': 0,
     'prefer-destructuring': 0,
+    'react/prop-types': 0,
   },
 };
