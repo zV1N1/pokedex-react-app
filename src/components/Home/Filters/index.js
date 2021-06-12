@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import { Container, FiltersType, Type } from './styled';
@@ -45,3 +46,7 @@ export default function Filters({ setFilter }) {
     </Container>
   );
 }
+
+Filters.propTypes = {
+  setFilter: PropTypes.func.isRequired,
+};

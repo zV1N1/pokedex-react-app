@@ -20,10 +20,6 @@ export default function Pokemon() {
   const [habitat, setHabitat] = useState('');
   const [evolution, setEvolution] = useState('');
 
-  // function capitalizeFirstLetter(string) {
-  //   return string.charAt(0).toUpperCase() + string.slice(1);
-  // }
-
   useEffect(() => {
     async function getData() {
       try {
@@ -57,7 +53,7 @@ export default function Pokemon() {
     }
 
     getData();
-  }, []);
+  }, [id]);
   return (
     <Container>
       <Name>{name}</Name>

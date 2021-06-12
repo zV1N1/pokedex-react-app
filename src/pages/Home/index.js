@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { Pokedex, Container } from './styled';
-import CardPokemon from '../../components/CardPokemon';
-import LoadMore from '../../components/LoadMore';
-import PokemonNotFound from '../../components/PokemonNotFound';
-import Filters from '../../components/Filters';
+import CardPokemon from '../../components/Home/CardPokemon';
+import LoadMore from '../../components/Home/LoadMore';
+import PokemonNotFound from '../../components/Home/PokemonNotFound';
+import Filters from '../../components/Home/Filters';
 
 import axios from '../../services/axios';
 
@@ -13,6 +13,10 @@ export default function Home() {
   const [filterPokemons, setFilterPokemons] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const query = new URLSearchParams(useLocation().search);
+
+  function filter(p) {
+    return p.types[0].type.name === query.get('type');
+  }
 
   useEffect(() => {
     function getData() {
@@ -39,9 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     if (query.get('type')) {
-      setFilterPokemons(
-        pokemons.filter((pk) => pk.types[0].type.name === query.get('type')),
-      );
+      setFilterPokemons(pokemons.filter((pk) => filter(pk)));
     } else if (!query.get('search')) {
       setFilterPokemons(pokemons);
     }

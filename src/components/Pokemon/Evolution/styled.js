@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { colors } from '../../../config/colors';
 
 export const Container = styled.div`
@@ -58,13 +59,23 @@ export const Pokemon = styled.div`
   justify-content: center;
 `;
 
-export const Species = styled.div`
+export const Species = styled(Link)`
   text-align: center;
   margin: 20px;
+  text-decoration: none;
 
   img {
     width: 150px;
     height: 120px;
+    transition: transform 300ms ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
   }
 `;
 

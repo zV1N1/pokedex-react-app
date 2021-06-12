@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { More } from './styled';
 
-import axios from '../../services/axios';
+import axios from '../../../services/axios';
 
 export default function LoadMore({ pokemons, setPokemon }) {
   function handleClick() {
@@ -30,3 +31,8 @@ export default function LoadMore({ pokemons, setPokemon }) {
     </More>
   );
 }
+
+LoadMore.propTypes = {
+  pokemons: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setPokemon: PropTypes.func.isRequired,
+};

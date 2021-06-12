@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { colors } from '../../config/colors';
+import { colors } from '../../../config/colors';
 
 export const Container = styled.div`
   margin: 20px 20px 20px 0px;

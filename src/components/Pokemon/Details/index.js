@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Type, Abil, PokeDetails } from './styled';
 
@@ -43,3 +44,11 @@ export default function Details({ id, height, weight, abilities, type }) {
     </Container>
   );
 }
+
+Details.propTypes = {
+  id: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
+  weight: PropTypes.number.isRequired,
+  abilities: PropTypes.arrayOf(PropTypes.object).isRequired,
+  type: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

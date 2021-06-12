@@ -41,6 +41,9 @@
 I did this project as a means to improve my studies in React, it consists of a pokedex, with information from pokemon, Built using the **PokéAPI**.
 
 # Description
+I developed this application to reinforce my studies in react and styled-components, in it I made 3 pages, Home, Pokemon and Page 404.
+
+This application was developed in react, in it I used styled-components to do all the design of the pokemons cards, which made me have a better understanding of the library. I also used react-router-dom to make routes and filters for pokemons, and used axios to get data from PokeApi
 
 ---
 

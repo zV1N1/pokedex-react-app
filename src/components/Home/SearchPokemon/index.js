@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { CgPokemon } from 'react-icons/cg';
 import { BiSearchAlt } from 'react-icons/bi';
 import { useHistory } from 'react-router-dom';
 import { Container, Search } from './styled';
-import axios from '../../services/axios';
+import axios from '../../../services/axios';
 
 export default function SearchPokemon({ setFilter }) {
   const [search, setSearch] = useState('');
@@ -36,3 +37,7 @@ export default function SearchPokemon({ setFilter }) {
     </Container>
   );
 }
+
+SearchPokemon.propTypes = {
+  setFilter: PropTypes.func.isRequired,
+};

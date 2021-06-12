@@ -28,6 +28,5 @@ module.exports = {
     'func-names': 0,
     'no-prototype-builtins': 0,
     'prefer-destructuring': 0,
-    'react/prop-types': 0,
   },
 };

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { HiOutlineArrowRight } from 'react-icons/hi';
+
 import {
   Container,
   Title,
@@ -24,13 +26,13 @@ export default function Evolution({ type, url }) {
       do {
         const evoDetails = evoData.evolution_details[0];
 
-        const id = evoData.species.url.split('/')[6];
+        const pkx = evoData.species.url.split('/')[6];
 
         evolChain.push({
           species_name: evoData.species.name,
           min_level: !evoDetails ? 1 : evoDetails.min_level,
           item: !evoDetails ? null : evoDetails.item,
-          id,
+          id: pkx,
           evolution: !!evoData.evolution_details.length,
         });
 
@@ -52,13 +54,15 @@ export default function Evolution({ type, url }) {
                 <HiOutlineArrowRight />
               </Level>
             )}
-            <Species>
+            <Species to={`/pokemon/${data.id}`}>
               <img
                 src={`https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`}
                 alt={data.species_name}
               />
               <p>#{data.id}</p>
-              <Name name={type[0].type.name}>{data.species_name}</Name>
+              {type[0] && (
+                <Name name={type[0].type.name}>{data.species_name}</Name>
+              )}
             </Species>
           </Pokemon>
         ))}
@@ -66,3 +70,8 @@ export default function Evolution({ type, url }) {
     </Container>
   );
 }
+
+Evolution.propTypes = {
+  type: PropTypes.arrayOf(PropTypes.object).isRequired,
+  url: PropTypes.string.isRequired,
+};

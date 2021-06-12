@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Name, Types, Heading } from './styled';
 
 export default function CardHeader({ id, name, types }) {
@@ -20,3 +21,9 @@ export default function CardHeader({ id, name, types }) {
     </Heading>
   );
 }
+
+CardHeader.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  types: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Details, BarDetails, Bar, DetailsName } from './styled';
 
 export default function CardDetails({ attack, defense, speed, hp }) {
@@ -45,3 +46,10 @@ export default function CardDetails({ attack, defense, speed, hp }) {
     </Details>
   );
 }
+
+CardDetails.propTypes = {
+  attack: PropTypes.number.isRequired,
+  defense: PropTypes.number.isRequired,
+  speed: PropTypes.number.isRequired,
+  hp: PropTypes.number.isRequired,
+};
