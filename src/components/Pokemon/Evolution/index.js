@@ -42,6 +42,14 @@ export default function Evolution({ type, url }) {
     }
     getData();
   }, []);
+
+  const handleClick = () =>
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+
   return (
     <Container>
       {type[0] && <Title name={type[0].type.name}>EVOLUTION CHAIN</Title>}
@@ -54,7 +62,7 @@ export default function Evolution({ type, url }) {
                 <HiOutlineArrowRight />
               </Level>
             )}
-            <Species to={`/pokemon/${data.id}`}>
+            <Species onClick={handleClick()} to={`/pokemon/${data.id}`}>
               <img
                 src={`https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`}
                 alt={data.species_name}

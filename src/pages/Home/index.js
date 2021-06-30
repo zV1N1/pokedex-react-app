@@ -57,7 +57,9 @@ export default function Home() {
           {filterPokemons.map((data) => (
             <CardPokemon key={data.name} data={data} />
           ))}
-          <LoadMore pokemons={pokemons} setPokemon={setPokemons} />
+          {!query.get('search') && (
+            <LoadMore pokemons={pokemons} setPokemon={setPokemons} />
+          )}
         </Pokedex>
       ) : (
         <PokemonNotFound />
