@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import { Container, FiltersType, Type } from './styled';
 
 import SearchPokemon from '../SearchPokemon';
 
-export default function Filters({ setFilter }) {
+export default function Filters() {
   const [active, setActive] = useState('');
   const query = new URLSearchParams(useLocation().search);
 
   useEffect(() => {
     setActive(query.get('type'));
   }, [query.get('type')]);
+
   return (
     <Container>
       <FiltersType>
@@ -42,11 +42,7 @@ export default function Filters({ setFilter }) {
           </Type>
         </li>
       </FiltersType>
-      <SearchPokemon setFilter={setFilter} />
+      <SearchPokemon />
     </Container>
   );
 }
-
-Filters.propTypes = {
-  setFilter: PropTypes.func.isRequired,
-};

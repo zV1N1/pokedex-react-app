@@ -14,16 +14,29 @@ export const Main = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
 
   img {
     width: 400px;
     height: 380px;
+  }
+
+  @media (max-width: 500px) {
+    justify-content: center;
+    img {
+      width: 300px;
+      height: 280px;
+    }
   }
 `;
 export const Name = styled.h3`
   font-size: 60px;
   font-weight: 100;
   margin: 20px 0 0 0;
+
+  @media (max-width: 500px) {
+    font-size: 50px;
+  }
 `;
 
 export const Habitat = styled.h4`

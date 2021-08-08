@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
+
 import { CgPokemon } from 'react-icons/cg';
 import { BiSearchAlt } from 'react-icons/bi';
-import { useHistory } from 'react-router-dom';
 import { Container, Search } from './styled';
+
 import axios from '../../../services/axios';
 
-export default function SearchPokemon({ setFilter }) {
+import { usePoke } from '../../../hooks/usePokemon';
+
+export default function SearchPokemon() {
   const [search, setSearch] = useState('');
+  const { setFilterPokemons, setIsLoading } = usePoke();
   const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  const searchPokemon = async (e) => {
     e.preventDefault();
-    history.push({ pathname: '/', search: `?search=${search}` });
-    try {
-      const { data } = await axios.get(`pokemon/${search}`);
-      const newData = [data];
-      setFilter(newData);
-    } catch (erro) {
-      setFilter([]);
+
+    if (search.length > 0) {
+      history.push({ pathname: '/', search: `?search=${search}` });
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(`pokemon/${search}`);
+
+        const newData = [data];
+        setFilterPokemons(newData);
+        setIsLoading(false);
+      } catch (err) {
+        setIsLoading(false);
+        setFilterPokemons([]);
+      }
     }
   };
+
   return (
     <Container>
-      <Search onSubmit={handleSubmit}>
+      <Search onSubmit={searchPokemon}>
         <CgPokemon size="30px" />
         <input
           type="text"
@@ -31,13 +43,9 @@ export default function SearchPokemon({ setFilter }) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <button type="submit">
-          <BiSearchAlt color="white" size="90%" onClick={handleSubmit} />
+          <BiSearchAlt color="white" size="90%" onClick={searchPokemon} />
         </button>
       </Search>
     </Container>
   );
 }
-
-SearchPokemon.propTypes = {
-  setFilter: PropTypes.func.isRequired,
-};

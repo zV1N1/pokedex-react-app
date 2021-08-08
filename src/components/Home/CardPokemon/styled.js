@@ -32,7 +32,7 @@ export const Card = styled.div`
     #ffc9cc 93.75%,
     #ffcac6 100%
   );
-  margin: 30px 30px 30px 0;
+  margin: 10px 30px 30px 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -75,5 +75,13 @@ export const Card = styled.div`
     &:hover {
       transform: scale(1.2);
     }
+  }
+
+  @media (max-width: 500px) {
+    width: 200px;
+    margin: 10px 10px 30px 10px;
+  }
+  @media (max-width: 360px) {
+    width: 250px;
   }
 `;

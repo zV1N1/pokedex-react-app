@@ -13,6 +13,13 @@ export const BarDetails = styled.div`
   height: 4px;
   background: white;
   margin-top: 5px;
+  @media (max-width: 500px) {
+    width: 160px;
+  }
+
+  @media (max-width: 360px) {
+    width: 210px;
+  }
 `;
 
 export const Bar = styled.div`

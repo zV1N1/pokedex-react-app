@@ -4,8 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { colors } from '../../../config/colors';
 
 export const Container = styled.div`
+  max-width: 320px;
   margin: 20px 20px 20px 0px;
   display: flex;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const FiltersType = styled.ul`
@@ -31,6 +36,12 @@ export const FiltersType = styled.ul`
       align-items: center;
       justify-content: center;
     }
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
   }
 `;
 
