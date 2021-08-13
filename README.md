@@ -23,6 +23,9 @@
 ---
 
 ## ❤️ The Project
+
+- Preview: https://pokedex-4329d8.netlify.app/
+
 I did this project as a means to improve my studies in React, it consists of a pokedex, with information from pokemon, Built using the **PokéAPI**.
 
 # Description
