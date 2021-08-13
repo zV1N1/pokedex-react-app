@@ -31,7 +31,7 @@ export const More = styled.button`
   cursor: pointer;
   transition: transform 300ms, background-image 600ms ease-in-out;
 
-  &:hover {
+  &:hover:enabled {
     transform: scale(1.3);
     background-image: radial-gradient(
       circle at 50% -20.71%,
@@ -47,5 +47,15 @@ export const More = styled.button`
       #00cefd 90%,
       #00c6ff 100%
     );
+  }
+
+  ${({ disabled }) =>
+    disabled &&
+    `
+      background: grey;
+    `}
+
+  @media (max-width: 500px) {
+    margin: auto;
   }
 `;

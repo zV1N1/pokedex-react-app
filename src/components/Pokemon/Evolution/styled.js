@@ -33,6 +33,10 @@ export const Chain = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const Name = styled.h2`
@@ -57,6 +61,10 @@ export const Pokemon = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const Species = styled(Link)`
@@ -65,6 +73,9 @@ export const Species = styled(Link)`
   text-decoration: none;
 
   img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     width: 150px;
     height: 120px;
     transition: transform 300ms ease-in-out;

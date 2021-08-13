@@ -22,7 +22,7 @@ export const Container = styled.div`
 `;
 
 export const PokeDetails = styled.table`
-  margin: 100px 100px 0 0;
+  margin: 100px 0 0 0;
   font-size: 25px;
   border-spacing: 20px;
   color: #adb5bd;
@@ -34,9 +34,18 @@ export const PokeDetails = styled.table`
     color: #ced4da;
     text-align: right;
   }
+
+  @media (max-width: 500px) {
+    margin: 30px 5px 0 5px;
+    font-size: 18px;
+  }
 `;
 
 export const Abil = styled.td`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
   ${({ name }) =>
     name &&
     `
@@ -51,6 +60,10 @@ export const Abil = styled.td`
 `;
 
 export const Type = styled.td`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
   ${({ name }) =>
     colors[`${name}`]
       ? `

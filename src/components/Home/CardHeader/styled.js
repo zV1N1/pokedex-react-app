@@ -28,7 +28,10 @@ export const Container = styled.div`
   justify-content: space-between;
 
   img {
-    width: 60%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    width: 70%;
     position: relative;
     transition: transform 300ms ease-in-out;
   }

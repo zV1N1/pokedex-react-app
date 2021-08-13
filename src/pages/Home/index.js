@@ -1,45 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
+import { useLocation } from 'react-router-dom';
 import { Pokedex, Container } from './styled';
 import CardPokemon from '../../components/Home/CardPokemon';
 import LoadMore from '../../components/Home/LoadMore';
-import PokemonNotFound from '../../components/Home/PokemonNotFound';
 import Filters from '../../components/Home/Filters';
 
-import axios from '../../services/axios';
+import { usePoke } from '../../hooks/usePokemon';
+import Loading from '../../components/Home/PokemonNotFound';
 
 export default function Home() {
-  const [filterPokemons, setFilterPokemons] = useState([]);
-  const [pokemons, setPokemons] = useState([]);
   const query = new URLSearchParams(useLocation().search);
+  const { pokemons, isLoading, filterPokemons, setFilterPokemons } = usePoke();
 
   function filter(p) {
     return p.types[0].type.name === query.get('type');
   }
-
-  useEffect(() => {
-    function getData() {
-      const newPokemons = () =>
-        Array(10)
-          .fill()
-          .map((_, index) => axios.get(`pokemon/${index + 1}`));
-
-      const pokemonPromises = newPokemons();
-      const newData = [...pokemons];
-
-      Promise.all(pokemonPromises)
-        .then((data) => {
-          data.map((value) => {
-            newData.push(value.data);
-            return null;
-          });
-        })
-        .then(() => setPokemons(newData));
-    }
-
-    if (pokemons < 3) getData();
-  }, []);
 
   useEffect(() => {
     if (query.get('type')) {
@@ -51,18 +27,16 @@ export default function Home() {
 
   return (
     <Container>
-      <Filters setFilter={setFilterPokemons} />
-      {filterPokemons.length ? (
+      <Filters />
+      {!isLoading && filterPokemons.length ? (
         <Pokedex>
           {filterPokemons.map((data) => (
             <CardPokemon key={data.name} data={data} />
           ))}
-          {!query.get('search') && (
-            <LoadMore pokemons={pokemons} setPokemon={setPokemons} />
-          )}
+          {!query.get('search') && <LoadMore />}
         </Pokedex>
       ) : (
-        <PokemonNotFound />
+        <Loading />
       )}
     </Container>
   );

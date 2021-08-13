@@ -67,7 +67,7 @@ export default function Pokemon() {
           type={type}
         />
         <img
-          src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
           alt={name}
         />
       </Main>

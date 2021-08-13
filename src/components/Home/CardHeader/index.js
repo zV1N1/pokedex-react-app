@@ -8,7 +8,7 @@ export default function CardHeader({ id, name, types }) {
       <Container>
         <h2>#{id}</h2>
         <img
-          src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
           alt="pokemon"
         />
         <Types>

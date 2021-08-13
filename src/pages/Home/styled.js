@@ -7,5 +7,5 @@ export const Pokedex = styled.section`
 `;
 
 export const Container = styled.section`
-  margin: 20px 40px 40px 40px;
+  margin: 20px 20px 40px 20px;
 `;

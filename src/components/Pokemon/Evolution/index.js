@@ -64,7 +64,7 @@ export default function Evolution({ type, url }) {
             )}
             <Species onClick={handleClick()} to={`/pokemon/${data.id}`}>
               <img
-                src={`https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`}
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
                 alt={data.species_name}
               />
               <p>#{data.id}</p>

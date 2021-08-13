@@ -1,10 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import { More } from './styled';
 
 import axios from '../../../services/axios';
+import { usePoke } from '../../../hooks/usePokemon';
 
-export default function LoadMore({ pokemons, setPokemon }) {
+export default function LoadMore() {
+  const { pokemons, setPokemons } = usePoke();
+  const [disable, setDisable] = useState(false);
+
   function handleClick() {
     const qtyPokemons = pokemons.length + 1;
     const newPokemons = () =>
@@ -14,7 +17,6 @@ export default function LoadMore({ pokemons, setPokemon }) {
 
     const pokemonPromises = newPokemons();
     const newData = [...pokemons];
-
     Promise.all(pokemonPromises)
       .then((data) => {
         data.map((value) => {
@@ -22,17 +24,17 @@ export default function LoadMore({ pokemons, setPokemon }) {
           return null;
         });
       })
-      .then(() => setPokemon(newData));
+      .then(() => setPokemons(newData))
+      .then(setDisable(true));
   }
 
+  useEffect(() => {
+    setDisable(false);
+  }, [pokemons]);
+
   return (
-    <More type="button" onClick={handleClick}>
+    <More disabled={disable} type="button" onClick={handleClick}>
       +
     </More>
   );
 }
-
-LoadMore.propTypes = {
-  pokemons: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setPokemon: PropTypes.func.isRequired,
-};
