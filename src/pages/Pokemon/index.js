@@ -24,7 +24,8 @@ export default function Pokemon() {
     async function getData() {
       try {
         const { data } = await axios.get(`pokemon-species/${id}`);
-        setHabitat(data.habitat.name);
+        const habitt = data.habitat ? data.habitat.name : '???';
+        setHabitat(habitt);
         const { url } = data.evolution_chain;
         const initial = new URL(url).pathname;
         const evUrl = initial.slice(8);
@@ -35,8 +36,7 @@ export default function Pokemon() {
     }
 
     getData();
-    // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     async function getData() {
