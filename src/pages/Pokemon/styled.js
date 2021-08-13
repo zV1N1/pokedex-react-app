@@ -17,6 +17,9 @@ export const Main = styled.div`
   flex-wrap: wrap;
 
   img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     width: 400px;
     height: 380px;
   }

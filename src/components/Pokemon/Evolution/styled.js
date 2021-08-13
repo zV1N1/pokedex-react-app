@@ -73,6 +73,9 @@ export const Species = styled(Link)`
   text-decoration: none;
 
   img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     width: 150px;
     height: 120px;
     transition: transform 300ms ease-in-out;
