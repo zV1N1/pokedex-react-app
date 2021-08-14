@@ -77,11 +77,11 @@ export const Card = styled.div`
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     width: 200px;
     margin: 10px 10px 30px 10px;
   }
-  @media (max-width: 360px) {
+  @media (max-width: 450px) {
     width: 250px;
   }
 `;

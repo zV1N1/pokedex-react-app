@@ -4,6 +4,10 @@ export const Pokedex = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: 470px) {
+    justify-content: center;
+  }
 `;
 
 export const Container = styled.section`
